@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 속성</title>
+    <style>
+        .box{
+            width: 1000px;
+            height: 1500px;
+            /*background-color: #a4a26f;
+            background-color: rgb(164, 162, 111);
+            background-color: rgba(164, 162, 111, 0.5);
+            background-image: url(./background/background.gif);
+            background-repeat: no-repeat;
+            /*background-position: 100px;
+            background-size: cover;*/
+            background: url(./background/background.gif) no-repeat center center / contain;
+        }
+        /* css 주석 */
+        /*
+        백그라운드 속성
+        컨텐츠 영역에 대한 배경과 관련된 속성
+        컬러, 이미지(사이즈, 배치)에 대한 속성으로 이루어져 있다.
+
+        1. 배경컬러
+        -정해진 컬러 프리셋 네임 (ex : red, blue, coral.. 등)
+        -#뒤에 6자리의 숫자와 알파벳으로 이루어진 헥사코드 (ex : #ffffff, #000000)
+        -rgb값으로 이루어진 값을 넣는 방법
+        (rgb = red green blue)
+        -rgba = a는 알파값으로 투명도를 의미한다. 알파값은 0~1 사이의 소숫값을 넣는다.
+
+        2. 배경 이미지
+        배경 이미지는 선택자의 영역만큼만 배경을 설정할 수 있다.
+        
+        배경 이미지는 영역의 크기보다 크면 이미지가 잘리고, 이미지가 영역보다 작으면 영역을 채우기 위해서 패턴처럼 반복하려고 하는 성질을 가지고 있다.
+        백그라운드 이미지는 컨텐츠로서 의미를 담고 있지 않기 때문에 잘려도 상관없는 이미지를 주로 사용하기 때문이다.
+        (의미를 담는 태그는 img라는 태그로 사용해야 한다.)
+
+        3. -repeat (배경 이미지 반복 속성)
+        -repeat(반복: 기본값) (꽉 채워지는 게 목적이기 때문)
+        -repeat-x (가로축만 반복)
+        -repeat-y (세로축만 반복)
+        -no-repeat (반복하지 않음)
+
+        4. position : 배경 이미지 위치 속성
+        모든 객체(태그)의 기본 위치 값은 좌측 상단(top:0, left:0)을 기준으로 한다.ㄴ
+        위치를 이동할때에는 position속성으로 이동한다.
+        position의 입력순서는 x축 y축 순서로 작상한다. px이나 %같은 단위를 작성할 수 있다.
+        특정한 위치값으로도 지정할 수 있다.(left, right, bottom, top, center)
+        값을 생략하면 0이나 같은 값으로 지정되는 것이 아니라 ceneter정렬로 된다.
+        움직이지 않더라도 값을 지정하는게 좋다.(안그러면 센터로 가니까..)
+
+        5. -size : 이미지 크기
+        배경 이미지는 원본 크기로 돌아오기 때문에 크기를 조절해주는 경우가 많다.
+        기본값은 auto(원본 크기를 유지)
+        수치 입력 : 고유 사이즈에서 입력된 크기로 변환
+        첫번째 값은 : width, 두번째 값은 height
+
+        cover : 이미지를 영역에 꽉 채운다는 전제 하에 이미지를 늘린다.
+        (영역이 기준이기 때문에 이미지가 잘릴 수도 있다.)
+        contain : 이미지 전체를 다 보여준다는 전제 하에 이미지를 늘린다.
+        (이미지가 기준이기 때문에 비율에 따라 영역이 남을 수도 있다.)
+
+        그룹속성
+        background : color image repeat position (이 순서로 많이 사용)
+        background : color image repeat position / size 
+
+        순서는 바뀌어도 상관 없으며, 필요한 값만 넣어도 된다. 
+        다만 size의 경우 position이 있는 경우에만 그룹속성에 사용할 수 있다. (position이 없으면 오류남! 항상 size는 position이 있을 때!!!!)
+
+
+
+        */
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

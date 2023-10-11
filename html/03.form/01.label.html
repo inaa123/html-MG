@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이블 태그</title>
+</head>
+<body>
+    <!-- 
+        레이블 태그
+        일반 텍스트와 입력 요소간의 연결고리를 만들어서 하나의 영역으로 인식하는 태그
+        웹 표준과 접근성을 준수하기 위해서는 기본적으로 label을 사용해서 작성하도록 하고 있다.
+
+        1. 명시적 작성 방식 - id와 for를 사용해서 label을 작성한다.
+
+        2. 암시적 작성 방식 - id와 for를 사용하지 않고 묶어서 label을 작성한다.
+
+        암시적 작성 방식은 시인성이 떨어진다.(단점) 오래된 기기나 버전에서는 암시적 작성방식을 인식하지 못하는 경우도 있다.
+        그래서 명시적 작성 방식을 추천한다.
+
+        
+
+
+
+
+    -->
+
+    <form action="" method="post">
+        
+        <label for="male">남자</label> <!-- 명시적 작성 방식(암시적보다 더 효율적) -->
+        <input type="radio" name="gender" value="male" id="male">
+
+        <label> <!--암시적 작성 방식-->
+            여자<input type="radio" name="gender" value="female">
+        </label>
+       
+    </form>
+</body>
+</html>

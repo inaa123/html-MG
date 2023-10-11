@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /*
+        레이아웃 방법 ?
+        table -> inlin-block -> float -> grid -> flex (flex젤 최근?)
+        레이아웃 배치를 위해 만들어진 css기법이기 때문에 float나 inline-block보다 훨씬 간편하고
+        강력한 기능들을 제공하고 있다.
+
+        *ie에서는 호환성이 100%가 안되기 때문에 적절한 css를 우회하여 사용하는 방식이었지만
+        현재는 고려대상이 아니기 때문에 자유롭게 사용할 수 있어서 사용성이 대폭 증가했다.
+
+        flex사용 규칙을 따르면 float, inlineblock보다 쉽게 만들 수 있다.
+
+        flex가 적용되는 범위 (아래 두 가지 봐야함)
+
+        -flex가 적용되는 공간을 생성하는 요소
+        -flex가 실제로 적용되는 객체
+
+        container : flex 공간, item : flex 적용되는 애들
+
+        flex가 적용되면 item들은 inline-block처럼 컨텐츠만큼만 영역을 가지게 된다.
+       
+        height는 container의 높이 값만큼 생성된다.
+
+        flex는 container와 item에 적용하는 css가 정해져 있다.(so, 컨테이너와 아이템 나눔)
+
+
+
+        */
+        .container{
+           /* display: flex; width는 컨텐츠 길이만큼! inline-block는 개행문자있지만, flex는 x*/
+            display: inline-flex; /*inline-flex보다 flex더 많이 사용.*/ 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+    
+</body>
+</html>

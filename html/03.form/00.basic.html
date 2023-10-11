@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력 요소</title>
+    <style>
+        textarea{
+            width: 200px;
+            height: 100px;
+            resize: none; /*사용자 리사이즈 이벤트를 막아 놓음*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    입력태그
+    사용자가 입력을 위한 다양한 방식의 입력 폼을 제공하는 태그들
+    지정된 서버에 입력된 값을 보내거나 받는 역할을 한다.
+    데이터를 전송하거나 받아와야 하는 요소들이기 때문에 설정값이 많다.
+
+    form태그에 들어가는 속성
+    1. action : 실행시킬 주소를 지정
+    입력한 값을 서버나 프로그램의 주소로 지정
+    이곳으로 데이터를 전송하려면 브라우저가 전송 위치를 알아야 하기 때문에 필수적으로 넣어야 한다.
+
+    2. method : 전송되는 데이터의 타입
+     - get = 전송되는 데이터를 암호화하지 않는다.
+     암호화하지 않기 때문에 보안에 취약하며, 한 번에 전송되는 데이터의 양이 제한적이다.(쿼리스트링 방식을 채택하기 때문)
+     - post = 전송되는 데이터의 값을 암호화해서 전송한다.
+     데이터를 별도로 전송하는 방식이기 때문에 브라우저에 내역으르 남기지 않는다.
+     보안성이 get에 비해 월등하게 높으며, 한 번에 전송되는 데이터의 양도 제한이 없다.
+
+    form에 들어가는 입력 태그들
+    1. input = 다양한 입력 방법을 제공하는 입력 태그 (가장 중요)
+    type 속성으로 입력도구의 종류를 변환할 수 있다.
+
+    input에 들어가는 type의 종류(input태그들로 설명)
+
+    input에 들어가는 속성의 종류
+    -type = input의 입력방법을 변경하는 속성
+    -value = 값
+        type 속성에 따라 용도가 달라진다.
+        체크박스 형태에서는 서버에 제출되는 값
+        text에서는 초기값
+        버튼에서는 내부 텍스트
+    -name = 입력요소에서 id와 class와 비슷한 개념으로 쓰이며, css를 주기 위해서 사용하진 않고
+    스크립트나 서버에서 정보의 값을 식별하기 위해서 만든 용도다. 분류위한 목적 ex라디오에서 name이 같으면 중복선택x
+    -placeholder = 영역에 대한 힌트
+    -required = 필수 입력란으로 변경 (속성 명과 값이 같은 거만 있는 경우 값은 생략해도 된다.ex: required에는 required밖에 없어 required="required"라 안ㅆ서도 됨)
+    -disabled = 사용자가 값을 입력하지 못하도록 lock을 건다. - 서버에 데이터값도 넘기지 않음. (작성x, 선택x)
+    -readonly = 사용자가 값을 입력하지 못하도록 lock을 건다. - 서버에 데이터 값은 넘김. (작성x, 선택o)
+
+    -checked = 체크박스에서만 사용할 수 있으며, 선택지 중에서 미리 선택되도록 하는 속성
+    
+    -maxlength, minlength = 최대 글자 수와 최소 글자수 설정이다.
+    최소 글자수는 유효성 검사를 진행해야 한다. (최대 글자수는 넘어가면 더이상 작성되지 않아서 알 수 있음)
+    -size = inputt창의 길이 조절 속성
+    px이나 %개념이 아니라 글자 수의 개념. 기본값은 20 
+    widthㅊ처럼 정확한 값을 파악하기 어렵기 때문에 잘 사용하진 않는다. width와 섞어서 사용하지도 않는다.
+
+
+
+    -->
+
+    <form action="" method=""> <!-- 입력요소를 넣을 때 항상 form으로 선언하고 입력태그를 넣어야 한다.-->
+        <input> <!-- type을 지정하지 않으면 기본값으로 type="text"로 지정된다. -->
+        <input type="text" value="텍스트입니다." name="userId"> <!-- 텍스트를 입력하는 입력창. 기본값. 위보단 아래가 좋음(명시하는게 좋다.) -->
+        <input type="password" placeholder="패스워드를 입력해주세요" required> <!-- 문자를 암호화해서 출력한다. -->
+        <input type="text" disabled>
+        <input type="text" readonly>
+        <input type="text" minlength="5" maxlength="10" size="50">
+        <input type="button" value="버튼"> 
+        <button>버튼</button>
+        <!-- 기능을 가지고 있지 않은 일반 버튼(스크립트에서 기능을 넣어서 사용할 수 있다.) -->
+        <input type="submit"> <!--제출 버튼(전송)-->
+        <input type="reset"> <!-- 내용 초기화 버튼-->
+        <input type="number"> <!-- 문자는 입력되지 않으며, 숫자만 입력 가능하다.
+        왼쪽에 스피너 버튼으로 숫자를 조절할 수도 있으며, 직접 입력도 가능하다.-->
+        <input type="color"> <!-- 컬러를 지정할 수 있는 colorpicker창이 생성된다.
+        ie 미지원(대부분 하위버전에서는 미지원) -->
+        <input type="date"> <!-- 날짜를 지정할 수 있는 캘린더창이 생성된다.
+        ie는 미지원-->
+        <input type="email"> <!-- 
+            이메일 주소 작성 폼
+            일반 텍스트창과 같지만 제출을 눌렀을 때 이메일 주소의 유효성 검사를 진행한다.
+            조건을 만족하지 못하면 제출하지 않고 하단의 말풍선으로 에러를 표시한다.
+        -->
+        <input type="file"> <!-- 파일 업로드 버튼 -->
+        <input type="hidden"> <!-- 사용자가 직접 보거나 상호작용하는 것을 금지하는 데이터를 취급할 때 사용한다.
+        사용자에게 노출이 되지 않아야 하는 데이터들을 취급하는 영역이다. 
+        -->
+        <input type="radio">  <!-- 중복 선택이 불가능한 체크박스다. ex: 성별체크 -->
+        <input type="checkbox"> <!-- 중복선택이 가능한 체크박스 형태다. -->
+
+        남자<input type="radio" name="gender" value="male" checked> 
+        여자<input type="radio" name="gender" value="female">
+
+        <select name="month">
+            <option value="jan">1월</option>
+            <option value="feb">2월</option>
+            <option value="mar">3월</option>
+            <option value="apr" selected>4월</option>
+        </select>
+        <!-- 선택 옵션 입력창
+        option으로 해당 주제의 내용을 표시할 수 있으며, selected로 우선 내용을 선택할 수 있다. -->
+        <input type="text">
+        <textarea>
+
+        </textarea>
+        <!-- input으로 생성된 text영역은 여러줄을 작성할 수 없다.
+        여러줄의 텍스트를 작성할 때에는 textarea로 작성한다.
+        단 사용자가 리사이즈를 할 수 없도록 리사이즈 이벤트를 없애주는 것이 좋다. (css에서 조절할 수 있다.)
+        -->
+    </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position fixed</title>
+    <style>
+        body,html{
+            height:5000px;
+        }
+        .box{
+            width:100%;
+            height:200px;
+            background: coral;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 99999;
+        }
+        .content{
+            width: 100%;
+            height: 500px;
+            background: pink;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+        /*
+        fixed : 기존의 position속성은 body를 기준으로 하지만, fixed는 브라우저의 크기를 기준으로 한다.
+        화면 안에서 움직이지 않아야 하는 요소들을 고정할 때 사용한다.
+        
+        */
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+    <div class="content">content</div>
+    
+</body>
+</html>

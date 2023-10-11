@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--html의 버전을 브라우저에 명시해주는 태그. 현재는 html5형식 
+    html버전마다 사용할 수 있는 태그와 css의 종류가 달라지게 됨.(그래서 꼭 브라우저에게 버전을 알려줘야 함!)
+--> 
+<html lang="en"> 
+<!--html문서 최상단에 위치하는 태그 
+    lang = html문서의 기본 언어를 설정하는 속성
+    en = 영어
+    ko = 한국어
+    zh = 중국어
+    언어 설정이 다르다고 해서 다른 언어를 사용하지 못하는 것은 아니며, 단순하게 번역의 차이를 두고 있다.
+    ex)한국어를 사용하는 지역에서 en으로 작성된 사이트에 접속시 번역 아이콘이 생성됨
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- html 안에 head와 body가 있고, head와 body 태그는 건들이지 않는다.
+        head는 실제로 브라우저에 출력되어서 보여지는 영역은 아니지만
+        파일의 연결, 렌더링 속성과 관련된 요소들이 들어오게 되는 중요한 영역
+        metatag = 문서에 대한 정보를 정의하는 태그들의 모임
+        title = 브라우저 탭에 표시되는 사이트의 제목
+    -->
+    <style>
+        div{background-color: coral; width:500px;}  
+        span{background-color: cyan; width:500px;}
+    </style>
+</head>
+<body>
+    <!--실제로 화면에 출력되는 내용이 들어오는 영역
+        모든 태그에는 block속성과 inline속성 중에 하나의 속성을 가지고 생성된다.
+
+        block속성 : 가로 사이즈를 컨텐츠(내용)의 길이와 상관없이 가로영역의 100%를 차지한다.
+        영역의 크기를 지정해서 조절할 수 있다.(width, height, blank)
+        태그 옆에 다른 태그들이 정렬할 수 없다.
+
+        inline : 기본적으로 영역을 생성할 수 없다.
+        컨텐츠(내용)의 길이만큼만 영역이 생성된다.
+        영역을 지정할 수 없다.
+
+        시멘틱 태그 : 목적에 맞는 태그를 사용해서 구조화 하는 행위
+
+        
+
+    -->
+    <div>div는 block속성을 가진 가장 기본적인 태그입니다.</div>
+    <div>div는 block속성을 가진 가장 기본적인 태그입니다.</div>
+    <div>div는 block속성을 가진 가장 기본적인 태그입니다.</div>
+
+    <span>span태그는 inline속성을 가진 기본적인 태그입니다.</span>
+    <span>span태그는 inline속성을 가진 기본적인 태그입니다.</span>
+    <span>span태그는 inline속성을 가진 기본적인 태그입니다.</span>
+</body>
+</html>

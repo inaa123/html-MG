@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-grow</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /*
+        flex-grow
+        item의 사이즈 증가 비율 설정
+        기본값은 0이며, 0이 아닌 다른 숫자가 들어오게 되면 비어있는 여백을 채워서 늘어나게 된다.(화면 꽉)
+
+        숫자는 배율을 의미하며, 숫자가 다르게 들어갈 경우 배율에 따라 영역의 크기가 나눠지게 된다.
+
+        ex) item의 grow의 값이 1,5,3인 경우
+        grow가 1인 item은 1/9 영역
+        grow가 5인 item은 5/9 영역
+        grow가 3인 item은 3/9 영역을 배분받는다. 
+
+        grow가 flex를 잘 표현한 요소. 유연하게 늘어난다.
+
+        */
+        .container{
+            display: flex;
+        }
+        .item{ 
+            /*width: 100%;고정값이 됨 영역값이 달라지면 height 또 넣어줘야함*/
+            flex-grow: 1;
+        }
+        .item:nth-of-type(2){
+            flex-grow: 5;
+        }
+        .item:nth-of-type(3){
+            flex-grow: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+    
+</body>
+</html>

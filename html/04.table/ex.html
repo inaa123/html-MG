@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*reset*/
+        body,html,div,p,span,form,input,select,table,tr,td,th,caption{
+            margin: 0px;
+            padding: 0px;
+        }
+        table{
+            border-spacing: 0px;
+            border-collapse: collapse;
+            font-size: 0px;
+        }
+
+        /*custom*/
+        .container {
+            width: 1170px;
+            margin: 100px auto; 
+        }
+
+        .titlebox{
+            border-bottom: solid 2px #333333;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .title{
+            /*
+            font-size: 40px;
+            font-weight: bold;
+            font-family: "돋움";
+            */
+            font: bold 24px "돋움"; 
+            /*
+            font 그룹 속성
+            1. font : 굵기(weight) 사이즈(size) 글꼴(family);
+            2. font : 굵기 사이즈 / 행간 글꼴 -> 사이즈가 있을 때만 행간을 넣을 수 있다.
+
+            font-size의 기본값은 16px
+            */
+
+            margin-bottom: 12px;
+        }
+
+        tr{
+            border-bottom: solid 1px #c2c2c2;
+            height: 100px;
+        }
+        th{
+            width: 170px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        label{
+            display: block;
+            width: 100%;
+        }
+        .star{
+            color: #00b0f0;
+            font-weight: bold;
+        }
+        .text{
+            width: 360px;
+            height: 60px;
+            box-sizing: border-box;
+            padding: 0px 20px;
+        }
+        .th02{
+            padding-left: 110px;
+        }
+        input[type=button]{ 
+            /*type 선택자*/
+            width: 117px;
+            height: 60px;
+            border: none;
+            background: transparent;
+            vertical-align: bottom;
+            margin-left: 10px;
+            /*
+            vertical-align 수직정렬 속성 : 인라인과 테이블 셀 요소에만 적용 가능
+            정해진 값들은 베이스 라인을 기준으로 정렬한다.
+            sub : 부모 아래 글자를 기준으로 정렬
+            super : 부모 윗 글자를 기준으로 정렬
+            
+            *top : 요소의 맨 위를 줄에서 가장 위의 위치에 맞춤
+            *bottom : 요소의 맨 아래를 줄에서 가장 낮은 위치에 맞춤
+            *middle : 중앙에 위치
+            *top,bottom,middle 많이 사용. 웬만하면 이걸로 다 맞출 수 있다.
+
+            % : 요소를 line-height를 기준으로 이동
+            px : 베이스라인을 기준으로 이동(n px 아래 위로)
+
+
+
+            */
+        }
+        input.submit-btns { /*input 안에 있는 submit-btns를 찾기 위해 붙여써야한다!(점수 높이기 위해?) input submit-btns는 '나'?를 찾는 것*/
+            color: #ffffff;
+            background-color: #001e50;
+            margin-right: 26px;
+        }
+        input.auth-btns{
+            color: gray;
+            background: #c2c2c2;
+        }
+
+        .text02{
+            width: 304px;
+            height: 60px;
+            box-sizing: border-box;
+            padding: 0px 20px;
+        }
+        
+        .sigungu{
+            margin: 0px 44px;
+        }
+
+        .radio-label{
+            font-size: 14px;
+            display: inline-block;
+            width: auto; /*기본값으로 변경(컨텐츠 길이만큼)*/
+            margin: 0px 50px 0 20px;
+        }
+
+        input[type=radio]{
+            width: 24px;
+            height: 24px;
+            vertical-align: top;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="titlebox">
+            <p class="title">개인정보입력</p>
+            <p class="titlebox-text">
+                일부 전시장에서는 만 26세 이상만 운전자 시승이 가능하며, 
+                만 26세 이하 고객께서는 동승석 탑승으로 시승이 제한될 수 있습니다.
+            </p>
+        </div>
+
+        <!-- <table><form></form></table>은 X -> TABLE자식요소로는 정해진 태그만 올수있음-->
+        <form>
+            <table>
+                <tr>
+                    <th>
+                        <label for="name">
+                            신청자성명
+                            <span class="star">*</span>
+                        </label>
+                    </th>
+                    <td>
+                        <input type="text" id="name" name="userName" placeholder="이름을 입력해주세요." required class="text">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="userCar">
+                            현재보유 차량모델
+                        </label>
+                    </th>
+                    <td>
+                        <input type="text" id="userCar" name="userCar" placeholder="보유 차량을 입력해주세요." class="text">
+                    </td>
+
+                    <th class="th02">
+                        <label for="birth">
+                            출생년도
+                            <span class="star">*</span>
+                        </label>
+                    </th>
+                    <td>
+                        <select id="birth" name="birth" class="text">
+                            <option value="1980">1980</option>
+                            <option value="1981">1981</option>
+                            <option value="1982">1982</option>
+                            <option value="1983">1983</option>
+                            <option value="1984">1984</option>
+                            <option value="1985">1985</option>
+                            <option value="1986">1986</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="callNumber">
+                            연락처
+                            <span class="star">*</span>
+                        </label>
+                    </th>
+                    <td colspan="3">
+                        <input type="text" id="callNumber" placeholder="'-'빼고 입력해주세요." name="userCllNumber" required class="text">
+                        <input type="button" class="submit-btns" value="인증번호 받기">
+                        <input type="text" placeholder="인증번호 입력" name="userAuth" required class="text">
+                        <input type="button" class="auth-btns" value="확인">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="local">
+                            전시장 선택
+                            <span class="star">*</span>
+                        </label>
+                    </th>
+                    <td colspan="3">
+                        <select class="text02" name="userLocal" id="local">
+                            <option value="seoul">서울</option>
+                            <option value="gyeonggido">경기도</option>
+                            <option value="incheon">인천</option>
+                        </select>
+
+                        <select class="text02 sigungu" name="userLocal02" >
+                            <option>부천시</option>
+                            <option>광명시</option>
+                            <option>신도림</option>
+                            <option>강남</option>
+                        </select>
+
+                        <select class="text02" name="userLocal03">
+                            <option>부천 전시장</option>
+                            <option>광명 전시장</option>
+                            <option>신도림 전시장</option>
+                            <option>강남 전시장</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="3month"> 
+                            구매시기
+                            <span class="star">*</span>
+                        </label>
+                    </th>
+
+                    <td colspan="3">
+                        <input type="radio" name="buy" id="3month" value="3m">
+                        <label for="3month" class="radio-label">3개월 이내</label>
+                        
+                        <input type="radio" name="buy" id="6month" value="6m">
+                        <label for="6month" class="radio-label">6개월 이내</label>
+                        
+                        <input type="radio" name="buy" id="1year" value="1y">
+                        <label for="1year" class="radio-label">1년 이내</label>
+                        
+                        <input type="radio" name="buy" id="2year" value="2y">
+                        <label for="2year" class="radio-label">2년 이내</label>
+
+                        <input type="radio" name="buy" id="noBuy" value="no">
+                        <label for="noBuy" class="radio-label">계획 없음</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="date">
+                            시승/상담 희망일
+                            <span class="star">*</span>
+                        </label>
+                    </th>
+                    <td>
+                        <input type="text" class="text" placeholder="날짜를 선택해주세요." name="userDate">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</body>
+</html>

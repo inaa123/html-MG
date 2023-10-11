@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 쿼리</title>
+    <style>
+        /* 미디어쿼리만 알아도 반응형 할 숭
+        미디어 쿼리(분기점, 브레이크 포인트)
+        반응형에서 필수적으로 사용하는 속성으로 반응형에서 레이아웃이 달라지는 지점을 잡아주는 css 속성이다.
+        분기점은 시안에 따라서 잡는 것이 보통이지만,(많이 잡으면 힘듦..)
+        사이즈는 각 디바이스의 대표 사이즈를 기준으로 작성이 된다.
+
+
+        pc 사이즈 1920, 1600, 1024
+        테블릿 사이즈 1024, 960, 768 (사이즈가 다른 기기와 중첩되는 경우가 있음(pc-1024 테블릿-1024, 테블릿-768 모바일-768))
+        모바일 사이즈 320, 480, 768 
+
+        쿼리 작성 방식
+        pc 퍼스트 = max-width(기준)
+        모바일 퍼스트 = min-width(기준)
+
+        분기점 잘 나눠서 필요한 부분 잘 넣어주자! (사라지는 것도 좋음. 쉬워서...)
+
+        */
+        
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .parent{
+            padding: 12px;
+            width: 1200px;
+            margin: 50px auto;
+            background: lightcoral;
+            box-sizing: border-box;
+            display: flex;
+            gap: 5%;
+        }
+        .parent > div{
+            width: 30%;
+            height: 200px;
+            background: pink;
+        }
+
+        @media screen and (max-width : 1200px){ /*띄어쓰기 주의*/
+            .parent{
+                width: 100%;
+            }
+
+        }
+
+        @media screen and (max-width : 768px){
+            .parent{
+                flex-direction: column;
+                gap: 20px; /*gap %를 잡을 기준?이없어서 다시 넣어줌*/
+            }
+            .parent > div{
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">child</div>
+        <div class="child02">child02</div>
+        <div class="child03">child03</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            font-size:30px;
+        }
+        p span{
+            background-color: coral;
+        }
+        p .bg_color_green{
+            background-color: green;
+        }
+        div div .bg_color_green{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        1. 모든 span의 font-size를 30px주기
+        2. p태그 안에 있는 span에는 background-color : coral주기
+        3. p태그 안에 있는 bg_color_green에는 green컬러 주기.
+        4. div안에 있는 bg_color_green은 blue컬러 주기.
+    -->
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>
+            <span>Lorem, ipsum dolor.</span>
+            <span class="bg_color_green">Lorem, ipsum dolor.</span>
+        </p>
+        <div>
+            <p>
+                <span class="bg_color_green">Lorem, ipsum dolor.</span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

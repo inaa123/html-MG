@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 미디어 쿼리</title>
+    <style> /*float로 반응형해보기*/
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .parent{
+            padding: 12px;
+            box-sizing: border-box;
+            width: 100%; /*모바일은 꽉 채워주고, 양쪽여백있는게좋음*/
+            background: darkkhaki;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        .parent > div{ /*분기점엔 최소한의 코드만 넣어주는게 좋음.*/
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            background: lemonchiffon;
+            float: left;
+        }
+        .parent .child03{
+            margin: 0px;
+        }
+
+        @media screen and (min-width: 768px){ /*486x이유 : 웹에서 최소로 줄일 수 있는 크기가 500px..*/
+            .parent > div{
+                width : 45%;
+                margin-right: 10%;
+            }
+            .parent .child02{
+                margin-right: 0px;
+            }
+            .parent .child03{
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .parent > div{
+                width : 30%;
+                margin-right: 5%;
+                margin-bottom: 0px;
+            }
+            .parent .child02{
+                margin-right: 5%;
+            }
+            .parent .child03 {
+                width: 30%;
+
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="parent"> 
+        <div class="child">child</div>
+        <div class="child02">child02</div>
+        <div class="child03">child03</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블</title>
+    <style>
+        table, td {
+            margin: 0px;
+            padding: 0px;
+            border-spacing: 0px;
+            border-collapse: collapse;
+            /*
+            table안의 셀들은 border가 생성이 되면서 border 사이에 여백이 생기는 border-spacing이 적용되어 여백이 생성된다.(개행문자아님!!)
+            그래서 border-spacing의 값을 0으로 해서 여백을 없애줘야 하며
+            여백을 없애면 마주보고 있는 border들은 서로 겹치지 않고 더해지는 현상이 발생하는 데, 
+            border-collapse를 collapse로 설정하여 겹쳐지는 부분을 하나로 보이게 해야 한다.
+            */
+        }
+        td, th{
+            /*
+            border-style: solid;
+            border-color: deeppink;
+            border-width: 3px;
+            */
+            border: solid 3px deeppink; /* border : 스타일 컬러 굵기*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        테이블
+        사이트에서 보여주는 정보들을 일관성있게 열과 ㅎㅇ으로 이루어진 표로 구성해서 정보를 제공하는 태그(like 엑셀)
+
+    -->
+    <table summary="표를 설명하는 속성"> 
+        <!--하나의 주제로 이루어진 테이블을 구성하는 container container:가장 큰 덩어리-->
+        <!-- *summary는 html5 이전에 사용하던 속성으로 테이블 태그에 직접 장성하며,
+        해당 테이블의 목적이나 구성을 설명하는 용도로 쓰인다.
+        "현재에는 다른 방법을 추천하며 더 이상 사용하지 않는다."
+        (없어진 이유)사용성이 모호하고, 제목으로 사용하는 개발자들이 많았다.
+        html5이후로는 비표준으로 바뀌어서 사용하지 않는다. -->
+        <caption>테이블의 제목</caption> 
+        <!--테이블에서만 사용하는 제목 태그다. 
+        summary가 있을 땐 제목만 넣는 태그 였으나, summary가 없어지면서 설명을 넣는 경우도 있다.-->
+
+        <!--*테이블의 자식요소는 정해진 태그만 사용할 수 있다.(중요)
+            tr = 테이블의 행을 구성하는 태그이며, tr에는 반드시 자식요소로 셀 태그가 있어야 한다.
+
+            td = 테이블의 셀을 구성하며, 내용을 의미한다.
+            th = 테이블의 셀을 구성하며, 제목을 의미한다.
+
+            td와 th는 단독적으로 생성될 수 없으며, 반드시 tr안에 있어야 하며 다른 태그들도 있어서는 안된다.(셀 태그 안에서 생성해 줘야 한다.)
+             (반드시 행(tr)을 만들고 셀(td,th)을 만들어야함!!! 다른태그들은 셀 태그 안에 생성ㅇ해야한다..?)
+
+             테이블 셀 병합
+             세로열 병합 : rowspan = "병합할 셀 갯수"
+             가로열 병합 : colspan = "병합할 셀 갯수"
+        -->
+
+        <tr>
+            <td>셀셀셀셀셀셀셀셀셀</td>
+            <td>셀셀셀셀셀셀셀셀셀</td>
+            <td>셀셀셀셀셀셀셀셀셀</td>
+            <td>셀셀셀셀셀셀셀셀셀</td>
+        </tr>
+        <tr>
+            <th>제목 셀</th>
+            <th>제목 셀</th>
+            <th>제목 셀</th>
+            <th>제목 셀</th>
+        </tr>
+
+        <table>
+            <caption>셀 병합하기</caption>
+            <tr>
+                <td rowspan="3">내용</td> <!--세로병합?-->
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+        </table>
+        <table>
+            <caption>테이블 셀 병합하기</caption>
+            <tr>
+                <td colspan="2">내용</td> <!--가로병합?-->
+                <td colspan="4">내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+        </table>
+    </table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-items</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /*
+        align
+        상대축에 대한 정렬
+        stretch : 부모 요소에 높이 값을 받아서 길이가 늘어남(기본값)
+        다른 값이 들어오게 되면 item자체의 높이 값으로 변환한다.
+
+
+        */
+        .container{
+            display: flex;
+            height: 500px;
+            align-items: center;
+            justify-content: center; /*수직과 가로 가운데 정렬 가능 : align-tiem과 justify이용하여(position안쓰고도)*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+    
+</body>
+</html>

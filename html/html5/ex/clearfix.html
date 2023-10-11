@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clearfix</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .gnb{
+            width: 1200px;
+            padding: 12px;
+            background: gray;
+            margin: 100px auto;
+            /*overflow: hidden; 실제적 해결방법x 베스트방법 알려줄게 */
+        }
+        .gnb li{
+            width: 300px;
+            height: 100px;
+            background: coral;
+            float: left; /*float:띄운다. ul이 li인식 못함. -> 해결 : 부모요소에 overflow:hidden넣기(근본해결방법x), 가상요소(after)clear요소 넣기*/
+        }
+        .clearfix:after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        /*.gnb:after{ .gnb내용의 마지막에(여기선 li들 밑에)
+            float사용시 overflow대신 이 방법을 사용하자!!!!
+            content: "";
+            display: block;
+            clear: both; 
+            
+        } float들어간곳 하나하나 다 넣기엔 비효율적 -> clearfix란 클래스를 만들어 사용..
+        */
+        /*
+        .gnb div{
+            clear: both;
+            
+            clear : float를 해제하는 속성이다.
+                -none : 사용하지 않겠다.
+                -left : float:left를 해제
+                -right : float:right를 해제
+                -both : left,rigth 다 해제(많이 사용)
+        }
+         */
+    </style>
+</head>
+<body>
+    <ul class="gnb clearfix">
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <!--<div></div>ul안에 div넣는건 잘못된 코드기 때문에 지운다.(보여주기 위해 넣었었음)-->
+    </ul>
+</body>
+</html>

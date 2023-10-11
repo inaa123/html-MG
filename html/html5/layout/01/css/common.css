@@ -1,0 +1,141 @@
+body, html{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.inner{
+    width: 1000px;
+    margin: 0px auto; /*가운데로 몰아놓기 위함*/
+    position: relative; /*position top left는 사용할 수 있으니 기본적으로 넣음*/
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    /*height: auto; 고정사이즈X -> 컨텐츠의 길이 일정하지X때문*/
+    /*자식요소의 height를 따라간다. 감싸는 요소?의 height는 잘 넣지 않는다. 
+    근데 왜 height 100%넣었을까..? 부모의 높이값이 잡히지 않아서 넣었음..?*/  
+}
+
+/*header*/
+.h-container{
+    width: 100%;
+    height: 100px;
+    border-bottom: solid 1px #ffffff;
+    background: #0D4633;
+}
+.logo{
+    width: 270px;
+    height: 40px;
+    background: lightgray;
+    /*모든영역의 가운데*/
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.h-sns-menu{ /*snsmenu와 menu 양쪽으로 잡혀서 float써도 되지만, 위에 사용한 position사용해보자*/
+    width: 200px;
+    height: 30px;
+    position: absolute; /*left 안움직이고, top만 고정*/
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: lightgrey;
+}
+.h-menu{
+    width: 240px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: 0px; /*우측에 붙어있음*/
+    transform: translateY(-50%);
+    background: lightgray;
+}
+
+.gnb{
+    width: 100%;
+    height: 43px;
+    background: #0D4633;
+}
+
+/*.gnb ul -> 따로 넣을필요 X -> 여기선 inner클래스 값(높이값 등)을 적용했기 때문*/
+.gnb ul li{
+    /*메뉴 컨텐츠 사이의 여백이 다 다름 : 여백을 준게 아니라 width값으로 준것
+    width값이 달라질 때 마다 여백이 달라지는 것 처럼 보임*/
+    width: 20%; /*컨텐츠 5개니 100%를 나누어 20% 인듯?*/
+    
+    float: left;
+}
+
+.gnb ul li a{
+    color: #ffffff;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 43px; 
+    font-size: 14px;
+    text-align: center;
+}
+
+/*main*/
+.container{ /*높이지정x->컨텐츠 잡은만큼 높이 늘어날 것*/
+    width: 100%;
+    background: #F7F0DA;
+}
+.visual{
+    width: 100%;
+    height: 460px;
+    background: lightgray;
+    text-align: center;
+}
+.container > .inner{
+    padding: 30px 0px 80px;
+}
+
+.banner-wrapper{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.banner-left{
+    float: left;
+    width: 394px;
+}
+.slider{
+    width: 100%;
+    height: 400px;
+    background: pink;
+    margin-bottom: 10px;
+}
+.delivery{
+    width: 100%;
+    height: 170px;
+    background: pink;
+}
+
+.banner-right{
+    float: right;
+    width: 596px;
+}
+.item-pick{
+    width: 100%;
+    height: 400px;
+    background: pink;
+    margin-bottom: 10px;
+}
+.item-banner{
+    width: 100%;
+    height: 170px;
+    background: pink;
+}
+
+.ad{
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    position: absolute;
+    top: 0px;
+    /*right: 0px; 우측상단에 붙어있음. 영역밖으로 밀어내야함*/
+    right: -70px;
+}

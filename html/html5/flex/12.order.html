@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /*
+        order는 배치순서를 설정하는 값. z-index와 흡사하다.
+        값이 작을수록 우선 배치가 된다.
+
+        다만 화면에 보이는 순서만 바꾸는 것이지, 실제로 배치된 순서는 아니다!!!
+
+         z-index 포지션의 값과 같으며, grid와 flex에서도 사용할 수
+
+        
+        */
+
+        .container{
+            display: flex;
+        }
+        .item{
+            order: 1;
+            opacity: 0.7;
+            transform: scale(1.5);
+        }
+        .item:nth-of-type(2) {
+            order: 0;
+        }
+        .item:first-of-type{
+            background: coral;
+            z-index: 999999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"><a href="#">Lorem ipsum dolor sit amet.</a></div>
+        <div class="item"><a href="#">Lorem, ipsum.</a></div>
+        <div class="item"><a href="#">Lorem </a></div>
+    </div>
+    
+</body>
+</html>

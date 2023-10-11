@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+        div, span{
+            background-color: lime;
+        }
+       
+         #container{
+            background-color: coral;
+        }
+        *{
+            background-color: pink;
+        }
+        span.bg_color_blue{
+            background-color: aquamarine;
+        }
+        .bg_color_blue{
+            background: blue;
+        }
+        span{
+            font-size:30px;
+        }
+        p span{
+            font-size: 40px;
+        }
+        p > span{
+            font-size:60px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        선택자의 종류
+        - * = 페이지 내의 모든 태그들을 지칭한다.(html부터 모든태그들 쫙 적용됨)
+        페이지에 있는 모든 태그들을 순차적으로 스캔하기 때문에 과부화의 위험을 가지고 있으며, 
+        예전에는 reset용도로 사용했지만 지금은 거의 사용하지 않는다.
+
+        - 태그선택자 = 태그명만 넣어서 선택하는 기본 선택자 방법이다.
+        - 동시 선택자 = 선택자, 선택자 
+            한 번에 여러 개의 선택자에 동일한 값이 들어가는 경우 관리가 용이하도록
+            한 번에 선택하는 방법(선택자의 갯수는 제한이 없다)
+
+        - 하위선택자 = 선택자 선택자 
+            앞에 작성된 선택자를 기준으로 하위로 있는 선택자를 '모두' 지칭한다.
+
+        - 직계자식 선택자 = 선택자 > 선택자
+            앞에 작성된 선택자를 기준으로 '바로 아래 있는 선택자'만 지칭.
+        
+        선택자 점수(우선순위 id선택자가 제일 높음!)
+        id[100점] -> class[10점] -> 태그[1점] -> *[0점]
+
+    -->
+    <div>div태그입니다.</div>
+    <div>div태그입니다.</div>
+    <div>div태그입니다.</div>
+    
+    <div class="bg_color_blue">div태그입니다.</div>
+    <div class="bg_color_blue">div태그입니다.</div>
+
+    <span class="bg_color_blue">span태그입니다.</span>
+
+    <div id="container" class="bg_color_blue">div태그입니다.</div>
+
+    <p>
+        저는
+        <span>
+            span
+            <span>
+                태그입니다.
+            </span>
+        </span>
+    </p>    
+</body>
+</html>

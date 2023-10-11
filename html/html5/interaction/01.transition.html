@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        transition
+        특정 행동(이벤트)을 취했을 때 변화되는 요소가 전환되는 시간적인 효과를 보여주는 속성이다.
+
+        다만 기본값으로 존재할 수 없다.
+
+        1.property : 전환되는 대상이 되는 속성(width, background, height)
+        property의 기본값은 all이며, 값이 많거나 특정한 속성을 지칭할 수 없는 경우 생략할 수 있다.
+
+        2. duration(중요) : 전환되는 시간 
+        단위는 ms, s(시간단위는 오직 ms, s만 사용)
+        1s = 1초
+        1000ms = 1s (ms추천! -> 스크립트에선 ms씀)
+        생략할 수 없는 값.(생략하면 0초, 애니메이션X)
+
+        3. delay : 이벤트가 시작되고 나서 전환되기까지의 지연시간
+        단위는 ms, s
+
+        4.timing-function : 전환시간 함수
+
+        -linear : 처음부터 끝가지 일정한 속도르르 유지한다.
+        -ease : 느리게 시작 -> 빠르게 진행 -> 느리게 종료한다. (기본값)
+        -ease-in : 느리게 시작해서 가속하면서 종료한다.
+        -ease-out : 빠르게 시작해서 감속하면서 종료한다.
+        -ease-in-out : ease-in하고 같지만 변환속도가 빠름 (패턴이 갑작스럽게 변함)
+
+        그룹속성
+        transition : property(생략가능) duration(생략불가능) delay(생략가능) timing-function(생략가능)
+        duration을 제외한 나머지 값은 생략할 수 있다. 
+        다른 속성들은 순서가 바뀌어도 된다. 하지만 duration과 delay의 순서는 반드시 지켜야 한다. 
+        값이 하나면 duration만 적용하고 값이 두 개일 때에는 항상 앞에 값이 duration이 된다.
+        
+        */
+
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: lightgrey;
+            /*
+            transition-property: all;
+            transition-duration: 1000ms;
+            transition-delay: 1000ms;
+            transition-timing-function: linear;
+            */
+            /*transition: all 1000ms 1000ms linear; -- 그룹속성*/
+            transition: 1000ms;
+        }
+        .box:hover{
+            background-color: darkorchid;
+            /* transition: 1000ms ; hover될때만 애니메이션 효과가 있고 out이벤트엔 적용x 그래서 원본값(기본값)에 많이 넣어준다.*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

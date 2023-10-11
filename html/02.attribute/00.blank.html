@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여백</title>
+    <style>
+        /*
+        여백
+        컨텐츠를 기준으로 (크게)안쪽과 바깥쪽 여백으로 구분하여 작성한다.
+
+        바깥쪽 여백(margin)
+        주로 컨텐츠와 컨텐츠 사이의 여백을 생성할 때 사용한다.
+        기본적으로는 영역에 포함되는 값이 아님!
+
+        안쪽 여백(padding, border)
+        주로 컨텐츠 내부에서 여백이 필요할 때 사용한다.
+        영역에 값이 추가되는 방식
+
+        padding을 적용했을 때 영역이 커지는 현상!
+        padding 적용 시 영역크기 변화 없게 하고 싶을 때
+        1. 영역값을 계산할 때 미리 padding값을 제외
+        (번거롭다. 정확하게 계산해야 한다. 자주 사용X)
+
+        2. CSS를 이용하는 방법 (많이 사용하는 방법)
+        box-sizing 스타일을 적용하는 방법
+            -content-box : 내부에 들어간 컨텐츠(내용)만큼만 영역으로 지정-기본값
+            -border-box : 여백을 컨텐츠에 포함(padding과 border)
+            -
+        */
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: coral;
+        }
+
+        .box{
+            margin-bottom:24px;
+            margin-left:24px;
+        }
+        .box02{
+            padding-top: 24px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+
+    <div class="box02">box02</div>
+</body>
+</html>

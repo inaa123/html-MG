@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justify-content</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /*
+        
+        메인축에 대한 정렬 속성()
+
+        *justify 로 싯작하면 main축에 대한 정렬. align으로시작하면? 상대축 정렬과 관련되어있음
+        justify : 메인축
+        align : 상대축
+
+        flex는 direction의 값에 따라 방향이 바뀌기 때문에 지정된 방향이 없다.
+
+        justify-content
+        start : 기본값 row일 때 왼쪽, column일 때 위 (기본값)
+        end : 자식요소들을 축의 끝쪽으로 이동시켜 준다. end가 들어간 것들
+                ( float : left, right와 비슷?)
+        
+        space-around : item의 '둘레'에 균일한 간격을 배분한다. (마주보는 영역의 여백이 같음)
+        -between : item의 '사이'에 균일한 간격을 배분한다. (양끝, 마주보는거 없는 것엔 여백X)
+        -evenly : item들에 '균일한' 간격을 배분한다.
+
+        */
+
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .container02{
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+    <div class="container container02">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+</body>
+</html>

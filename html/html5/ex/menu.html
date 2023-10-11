@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*reset*/
+        body, html, div, ul, li, a{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none; /*a태그 밑줄 reset속성*/
+        }
+        body{
+            background: lightgrey;
+        }
+        .container{
+            width: 1200px;
+            height: 100px;
+            background: #ffffff;
+            margin: 100px auto; /*요소 가운데 정렬(1200을 뺀 영역의(나머지) 값을 좌우로 균등하게 분배*/
+            position: relative; /*넣은이유 나중에~ -> 로고는 왼쪽 메뉴는 오른쪽으로 정렬할려고?*/
+            top: 0px;
+            left: 0px;
+        }
+        .logo{
+            width: 100px;
+            height: 50px;
+            background: gray;
+            /*margin-top: 25px; => 마진상쇄현상. 로고(자식)과container(부모)가 딱 붙어 있음*/
+            position: absolute;
+            /*top: 25px; -> 수치정하는 것보다 top:50%, transform: translateY(-50%)방법을 더 자주 사용*/
+            top:50%; 
+            transform: translateY(-50%); /*top:50%, transform: translateY(-50%) 세트*/
+            left:30px;
+        }
+        .gnb{
+            float: right;
+            height: 100%;
+        }
+        .gnb li{
+            float: left;
+            height: 100%;
+            margin-right: 30px;
+        }
+        .gnb li a{
+            display:block;
+            width: 100%;
+            height:100%;
+            line-height: 100px; /*수직정렬*/
+            font-size: 20px;
+            font-weight: bold;
+            color: #333333;
+        }
+        .gnb li a:after{
+            content: ""; 
+            display: block;
+            /*width: 0px; margin: 0px auto사용X*/
+            width: 100%; /*margin 0 auto대신 transform 사용하기 위해 width 100%로 설정 */
+            height: 10px;
+            background: orange;
+            /*margin: 0px auto; margin 0 auto사용X
+            메뉴 노란 하단 바 가운데부터 생성 : 객체는 꽉차면 100%, 100%이전*/
+            margin-top: -10px; /*margin 세부속성과 그룹속성 같이 사용 : 합쳐서 사용하거나 그룹이 세부보다 위에 둬야함 */
+            transition: 500ms;
+            transform: scaleX(0); /*scale의 기준은 객체 가운데! -> 그러니 따로 margin 0 autoX도됨*/
+        }
+
+        .gnb li:hover a:after{ /*선택자가 다른 경우? : 이벤트(여기선hover)일으킬 대상은 li, 적용대상은 a태그의 after다.*/
+            /*width: 100%;*/
+            transform: scaleX(1);
+        }
+        /*
+        마진 상쇄 현상(마진 겹침 현상; 좌 우는 X, 위 아래 O )
+        부모 요소와 자식 요소 사이에 간격이 없는 경우 
+        자식요소를 부모 요소 내부에 여백을 주기 위해 margin을 주는 경우
+        자식요소의 여백 값이 부모요소에도 영향을 주는 특징이 생긴다.
+        margin의 특징이기 때문에 padding이나 position으로 변경해야 한다.
+
+        */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            logo
+        </div>
+
+        <ul class="gnb">
+            <li><a href="#" title="메뉴버튼">BRAND</a></li>
+            <li><a href="#" title="메뉴버튼">ESG</a></li>
+            <li><a href="#" title="메뉴버튼">MENU</a></li>
+            <li><a href="#" title="메뉴버튼">STORE</a></li>
+            <li><a href="#" title="메뉴버튼">EVENT</a></li>
+            <li><a href="#" title="메뉴버튼">FRANCHISE</a></li>
+            <li><a href="#" title="메뉴버튼">HANSOT</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo-selector</title>
+    <style>
+        /*
+        가상 선택자
+        -사용자의 행동에 영향을 받는 요소를 생성한다.(이벤트)
+        -특장한 위치의 순번을 가진 선택자를 찾을 때(selector)를 
+        통틀어서 가상 선택자라고 한다.
+
+        이벤트 요소
+        a태그에만 들어가는 이벤트 선택자
+        :visited : 방문했던 링크 페이지에 대한 선택자
+        :link : 아직 방문하지 않은 링크 페이지에 대한 선택자
+        a태그에만 적용되는 이벤트(다른 태그에는 없음)
+
+        모든 태그에 적용 가능한 이벤트
+        :hover : 마우스 이벤트
+        :active : 마우스 클릭 이벤트
+        :focus : 키보드 이벤트로 해당 객체가 포크싱 되어 있을 때 활성화
+        포커스는 특정한 행동을 하는 객체(버튼, 입력, 이동)과 같은 상호작용을 발생시키는 태그에만 적용할 수 있다.
+
+
+
+        */
+
+        /* 
+        (컬러를 바꿀 때 대비되는 색으로 한다. 대부분 visited나 link태그는 잘 안바꾸고 그냥 전체 a태그만 바꾼다)
+        a {
+            color: coral;
+        }
+        a:visited{
+            color: black;
+        }
+        */
+        a:link{
+            color: aqua;
+        }
+
+        p:hover{
+            color: red;
+        }
+        p:active{
+            color: blue;
+        }
+        /* p태그는 상호작용x 단순 텍스트....?
+        p:focus{
+            color: orange;
+        } 
+        */
+        a:focus{
+            color: orange;
+        }
+
+        /* 
+        가상 선택자
+        특정한 순번을 찾는 선택자
+        nth-child(n/even/od) : n은 순번을 의미하며, 특정 숫자가 아닌 짝수(even)와 홀수(add)로 구분해서 지정할 수도 있다.
+        odd : 홀수
+        even : 짝수
+        숫자뒤에 n이 붙게되면 해당 숫자의 배수로 지속적으로 선택한다.(ex 5n : 5의 배수만 선택)
+
+        nth-child(n)의 가장 큰 특징은 태그와 선택자와 관계 없이 부모 요소에서 해당하는 순번만 만족한다.
+
+        nth-of-type(n) 부모요소를 기준으로 자식요소인 선택자 태그 중에서만 순번을 찾는다.
+        (type과 순번 모두 만족) (nth-child보다 nth-of-type을 더 사용..)
+        
+
+        */
+
+        ul li:nth-child(5n){
+            background: coral;
+        }
+
+        /*p:nth-child(2){ p태그 중에 두번째 녀석을 선택하고 싶지만 X. p태그는 선택자 영역X 오직 순번만 보며 두번째 태그가 P가 아니면 선택되지 않는다.
+            background: coral;
+        }*/
+
+        p:nth-of-type(2){
+            background: coral;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.naver.com">나를 클릭!</a>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <a href="http://www.nate.com">나를 클릭!</a>
+    <a href="http://www.daum.net">나를 클릭!</a>
+    <p>Lorem ipsum dolor sit amet.</p>
+    
+
+    <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+</body>
+</html>
