@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*
+조건문
+if
+
+작성방식
+1. if(조건문, true일 때 값, false일 때 값) => 축약버전,
+
+2. @if 조건문 {조건문을 만족할 때 값} @else if 조건문{ 조건을 만족할 때 값 }
+
+= 선언
+== 비교
+=== 데이터 유형까지 포함
+*/
+/*title마다 다른 컬러를 출력하게 하기*/
+.box {
+  background: yellow;
+  width: 100px;
+  height: 100px;
+}
+
+p {
+  font-size: 16px;
+  color: blue;
+}

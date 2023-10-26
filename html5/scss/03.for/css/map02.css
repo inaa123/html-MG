@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/**/
+.item1 {
+  color: coral;
+  border: solid 2px #000000;
+  background-color: pink;
+}
+
+.item2 {
+  color: cyan;
+  border: solid 1px #000000;
+  background-color: skyblue;
+}
+
+.item3 {
+  color: green;
+  border: solid 3px #000000;
+  background-color: lime;
+}
+
+/*
+$class : nth(map-keys($item), $i);
+
+map-keys : $item안에 있는 키 반환 (item1, item2, item3) ->
+nth : (item1, item2, item3)리스트 안에 있는 $i(1,2,3)순번의 값을 호출
+
+for문
+nth(map-keys($item), 1) -> nth((item1, item2, item3), 1) -> item1
+*/

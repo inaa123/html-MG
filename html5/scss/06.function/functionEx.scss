@@ -1,0 +1,22 @@
+/*
+매개변수로 받아오는 값을 곱해서
+function(매개변수){매개변수 * 매개변수}
+
+1. 각각의 선택자에 들어오는 function은 width에만 적용
+2. 각각의 선택자에 들어오는 매개변수는 height와 line-heignt에 적용할 것
+*/
+
+@function calcBox($width, $height, $unit : px){
+    $width : $width;
+    $height : $height;
+    @return calc(#{$width} * #{$width});
+}
+
+.box{
+    $size01 : 30px;
+    $size02 : 50px;
+    width : calcBox($size01, $size02);
+    height : $size02;
+    background: coral;
+    line-height: $size02;
+}

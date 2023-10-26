@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/*
+페이지 전체에서 재사용을 목적으로 제작하는 코드를 정리하는 메서드다.
+함수 개념으로 보기 때문에 if문이나 for문처럼 다른 스크립트를 이용해서 제작할 수도 있다.
+
+사용법
+@mixin 변수명{반환할 스타일} 
+
+호출할 땐 @include 변수명 으로 불러온다.
+
+*만들땐 @mixin 불러올땐 @include
+
+자주 사용하는 css?들에 사용하면 좋음
+*/
+.text {
+  font-size: 50px;
+  font-weight: bold;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.text02 {
+  font-size: 100px;
+  color: coral;
+  font-weight: bold;
+}
+
+.text03 {
+  font-size: 30px;
+  color: coral;
+  font-weight: bold;
+}
+
+.text04 {
+  font-size: 20px;
+  color: purple;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: solid 1px black;
+  border-radius: 30px;
+}
+
+.box02 {
+  width: 50px;
+  height: 50px;
+  border: solid 1px black;
+}
+
+.ellips,
+.ellips02 {
+  width: 500px;
+  margin: 24px auto;
+  background: wheat;
+}
+
+/*
+.ellips{
+    white-space: nowrap; //텍스트 자동 줄바꿈 속성. 기본값 wrap
+    overflow: hidden;
+    text-overflow: ellipsis; //잘린 글 뒤에 ...이 붙음. 한줄은 편함 ->두줄 이상에선 white-space 넣을 수 없다.
+}
+.ellips02{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    //두 줄 이상일 때( white-spce사용할 수 X.. )
+    display: -webkit-box;
+    -webkit-box-orient: vertical; //세로방향,
+    line-clamp: 2;
+    max-height: 48px; //48px은 폰트 사이즈마다 두줄이상이 될 수도 있따. 
+    line-height: 24px;//그래서 lineheight로 딱 두 줄 잡아줌(두 줄 벗어나지X). 보통 1.5~1로 잡음
+}
+*/
+.ellips {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 32px;
+  max-height: 64px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

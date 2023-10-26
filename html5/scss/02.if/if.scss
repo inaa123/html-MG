@@ -1,0 +1,44 @@
+/*
+조건문
+if
+
+작성방식
+1. if(조건문, true일 때 값, false일 때 값) => 축약버전,
+
+2. @if 조건문 {조건문을 만족할 때 값} @else if 조건문{ 조건을 만족할 때 값 }
+
+= 선언
+== 비교
+=== 데이터 유형까지 포함
+*/
+
+$color : pink; /*title마다 다른 컬러를 출력하게 하기*/
+$titleType : title;
+
+.box{
+    background: if($color == aaa, red, yellow);
+    width: 100px;
+    height: 100px;
+}
+
+p{
+    $titleType : aaa; //전역변수보다 지역변수 값을 먼저 봄. so 지역변수값 뽑아냄
+
+    @if $titleType == title{
+        font-size: 40px;
+        color: #000000;
+        font-weight: bold;
+    }@else if $titleType == subTitle{
+        font-size:30px;
+        color: #666666;
+        font-weight: bold;
+    }@else if $titleType == text{
+        color: #999999;
+        font-weight: normal;
+        font-size: 20px;
+    }@else {
+        font-size: 16px;
+        color: blue;
+    }
+}
+

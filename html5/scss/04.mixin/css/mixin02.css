@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/*
+문제
+세 버튼에게 배경컬러, 폰트컬러, 패딩, 보더를 각각 생성 (@include시 다 따로 받아)
+
+만약 class가 
+submit : border-color 파랑색,
+cancle : border-color 회색,
+error : border-color 빨간색
+
+*/
+.btn-container .submit {
+  color: white;
+  background: coral;
+  border: solid 2px;
+  padding: 20px;
+  border-color: blue;
+}
+.btn-container .cancle {
+  color: white;
+  background: coral;
+  border: solid 1px;
+  padding: 30px;
+  border-color: gray;
+}
+.btn-container .error {
+  color: white;
+  background: pink;
+  border: solid 4px;
+  padding: 40px;
+  border-color: red;
+}

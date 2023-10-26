@@ -1,0 +1,38 @@
+/*
+변수를 하나 생성해서 변수가 true면 
+background : white
+color: black
+
+false면
+background: black;
+color: white
+로 변환
+
+*/
+
+$theme : light;
+.box{
+    width: 100px;
+    height: 100px;
+    border: solid 2px gray;
+    padding: 10px;
+
+    @if $theme == light{
+        background: white;
+        color: black;
+    }@else {
+        background: black;
+        color: white;
+    }
+
+    /* 나
+    $name : abc;
+    @if $name == abcd{
+        background: white;
+        color: black;
+    }@else{
+        background: black;
+        color: white;
+    }
+    */
+}

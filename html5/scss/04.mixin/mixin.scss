@@ -1,0 +1,113 @@
+/*
+페이지 전체에서 재사용을 목적으로 제작하는 코드를 정리하는 메서드다.
+함수 개념으로 보기 때문에 if문이나 for문처럼 다른 스크립트를 이용해서 제작할 수도 있다.
+
+사용법
+@mixin 변수명{반환할 스타일} 
+
+호출할 땐 @include 변수명 으로 불러온다.
+
+*만들땐 @mixin 불러올땐 @include
+
+자주 사용하는 css?들에 사용하면 좋음
+*/
+
+@mixin font{
+    font-size: 50px;
+    font-weight: bold;
+    color: #666666;
+    line-height: 1.5;
+}
+//폰트사이즈만 다르게 넣고 싶을 때, 매개변수 들어가야 해서 ()넣어줘야함
+@mixin font02($fontSize){
+    font-size: $fontSize;
+    color: coral;
+    font-weight: bold;
+    //매개변수를 이용해서 값을 다르게 설정하는 방법
+    //매개변수 갯수엔 제한이 없지만, 순서를 주의 해야 한다.
+    //값이 하나라도 모자라면 에러를 표시한다.
+}
+
+//매개변수 기본값 지정 : 기본값이 있다가, 필요시 값을 넣어 교체할 수 있다. 
+@mixin font03($fontSize : 20px){
+    font-size: $fontSize;
+    color: purple;
+    //매개변수의 값을 지정하게 되면 값을 생략할 경우 기본값으로 적용된다.
+}
+
+@mixin circle($size, $radius : 0){ //radius:0은 사각형
+    width: $size;
+    height: $size;
+    border: solid 1px black;
+    
+    @if $radius != 0 { //$radius값이 0이 아닐 경우
+        border-radius: $radius;
+    }
+}
+
+
+.text{
+    @include font;
+}
+.text02{
+    @include font02(100px); //100px -> font02의 매개변수로 들어가 -> font-size: 에적용됨 
+}
+.text03{
+    @include font02(30px);
+}
+.text04{
+    //@include font02(); 값을 넣지않으면 -> 받아줄 값이 없어 error.
+    @include font03();
+}
+
+.box{
+    @include circle(100px, 30px);
+}
+.box02{
+    @include circle(50px);
+}
+
+.ellips,
+.ellips02{
+    width: 500px;
+    margin: 24px auto;
+    background: wheat;
+}
+
+@mixin ellips($lineHeight:16px, $line:1){ //여기선 기본폰트크기 16px이어서..
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @if($line > 1) {
+        line-height: $lineHeight;
+        max-height: $lineHeight * $line;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    } @else { //한줄이면
+        white-space: nowrap;
+    }
+}
+
+/*
+.ellips{
+    white-space: nowrap; //텍스트 자동 줄바꿈 속성. 기본값 wrap
+    overflow: hidden;
+    text-overflow: ellipsis; //잘린 글 뒤에 ...이 붙음. 한줄은 편함 ->두줄 이상에선 white-space 넣을 수 없다.
+}
+.ellips02{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    //두 줄 이상일 때( white-spce사용할 수 X.. )
+    display: -webkit-box;
+    -webkit-box-orient: vertical; //세로방향,
+    line-clamp: 2;
+    max-height: 48px; //48px은 폰트 사이즈마다 두줄이상이 될 수도 있따. 
+    line-height: 24px;//그래서 lineheight로 딱 두 줄 잡아줌(두 줄 벗어나지X). 보통 1.5~1로 잡음
+}
+*/
+
+.ellips{
+    //@include ellips();
+    @include ellips(32px, 2);
+}

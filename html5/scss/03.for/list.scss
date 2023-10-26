@@ -1,0 +1,42 @@
+/*
+list 여러개의 값을 하나의 변수에 나열해서 담는 방법이다.
+
+문법
+$변수명 : 값1, 값2, 값3........
+$변수명 : (값1, 값2, 값3,......) //map형태의 리스트
+$변수명 : 값1 값2 값3
+
+
+
+*/
+
+$listItem : apple, orange, lemon;
+$size : 20px, 30px, 40px;
+$weight: normal, regular, large;
+
+p{
+    background: index($listItem, orange);
+    //index는 리스트 안에 있는 특정 값의 순번을 호출(순번은 1번부터 시작)
+    background: length($listItem);
+    //length : 리스트 안에 있는 값의 갯수를 호출해준다.
+    background: nth($listItem, 2);
+    //nth : 리스트 안에 있는 특정 순번이 있는 값을 호출(index와 반대)
+    background: set-nth($listItem, 2, melon);
+    //set-nth : 리스트의 특정 순번에 있는 값을 바꿈
+    background : zip($size, $listItem, $weight);
+    //여러 개의 리스트들을 하나의 리스트안에서 합친다.   
+}
+
+$fontSize: 10px, 12px, 14px, 16px, 18px, 20px, 22px;
+
+@for $i from 1 through length($fontSize){ //fontSize 변수 자체를 사용하기 위해 달러변수명 끝
+    $font : nth($fontSize, $i); //fontSize에 i번째 값을 
+    $class : font-size-#{$font}; //텍스트로 불러올땐 #과 {}쓰기
+
+    .#{$class}{
+        font-size : $font;
+        line-height : $font * 1.5;
+        padding: 6px;
+        border: solid 1px #000000;
+    }
+}

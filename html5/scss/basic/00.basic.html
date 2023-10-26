@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./common.css">
+    <!--
+        css - cascating style sheet
+        (css가 기본형이라 불편한점이 많으ㅁ)
+        - 하위 선택자를 선택할 때 (선택자들 계속 나열해야 했음..)
+        - 변수, 스크립트 문법을 사용할 수 없음(코드가 가독성이 낮아짐)
+        - 프로젝트의 크기가 커지면 유지보수의 난이도가 같이 올라간다.
+
+        이러한 점을 해결한 css문법이 sass와 scss. -> css의 확장 스크립트 언어로 보면 된다.
+        sass = 문법적으로 멋있는 스타일 시트라는 뜻.(scss보다 먼저나옴)
+            - 오히려 가독성이 떨어짐(그래서, 이를 보완하기 위해 scss나옴)
+        scss = 문법적으로 엄청 멋있는 css다. (sassy css)
+        css보다 scss를 더 많이 사용한다.
+
+        브라우저는 css파일만 인식할 수 있다.(scss, sass확장자는 인식하지 않음)
+        scss언어로 작성한 후에 css언어로 컴파일(변환)한 후에 업로드하는 방식을 쓴다.(컴퓨터가 함.직접하진X)
+
+        -변수 선언 가능
+        -조건문 반복문 사용(for문 if문)
+        -import기능이 있음
+        -component형식을 사용할 수 있다.(mixin)
+        -function(함수) 사용 가능
+        -들여쓰기와 중첩으로 선택자의 길이가 줄어들게 된다.
+
+        필요 확장 프로그램 
+        Live Sass Compiler 설치
+
+        처음 live sass compiler설치시 설정할 것들
+        -file탭에서 preference -> setting -> live sass compiler검색
+        livesassCompiler.setting.generatorMap 설정 탭에서 값을 true에서 flase롤 벼 ㄴ경
+            -false인데도 map파일이 생성된다면 true로 바꿔서 저장한 후 map파일 삭제 후 false로 변경해서 다시 저장한다.
+        setting.format 설정
+        -format : 저장 시 css 정렬 스타일 지정
+          compressed : 압축형, expended는 비 압축형
+        -savePath : 저장 경로 설정
+          "~/폴더명(css)" -> ~는 현재위치. 폴더명은 보통 css로 지정한다.
+        -나머진 안건들여도됨!
+
+        
+    -->
+</head>
+<body>
+    <div class="parents">
+        <div class="parent">
+            <div class="child">
+                child
+            </div>
+        </div>
+    </div>
+</body>
+</html>

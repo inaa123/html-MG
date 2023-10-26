@@ -1,0 +1,38 @@
+
+$section : (
+    header : (
+        basis : 30%,
+        padding: 20px,
+        background: gray
+    ),
+    main : (
+        basis: 45%,
+        padding : 30px,
+        background: lightgray
+    ),
+    side : (
+        basis : 20%,
+        padding: 10px,
+        background: black
+    ),
+    footer : (
+        basis: 10%,
+        padding : 20px,
+        background: gray
+    ) 
+);
+
+@each $content, $value in $section{
+    .section-#{$content}{
+        display: flex;
+        flex-wrap: wrap;
+        background-color: map-get($value, background);
+
+        .inner{
+            flex: 0 0 map-get($value, basis);
+            margin: 0px map-get($value, padding)/2;
+            padding: 40px;
+            background: #ffffff;
+        }
+    }
+}

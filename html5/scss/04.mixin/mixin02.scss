@@ -1,0 +1,41 @@
+/*
+문제
+세 버튼에게 배경컬러, 폰트컬러, 패딩, 보더를 각각 생성 (@include시 다 따로 받아)
+
+만약 class가 
+submit : border-color 파랑색,
+cancle : border-color 회색,
+error : border-color 빨간색
+
+*/
+
+
+@mixin btnStyle($type, $bgColor, $fontColor, $padding, $border) {
+    color : $fontColor;
+    background : $bgColor;
+    border : $border;
+    padding : $padding;
+
+    @if $type == 'submit' {
+        border-color: blue;
+    }@else if $type == 'cancle' {
+        border-color: gray;
+    } @else if $type == 'error' {
+        border-color: red;
+    }
+}
+
+.btn-container{
+    .submit{
+        @include btnStyle('submit', coral , white , 20px , solid 2px);
+    }
+    .cancle{
+        @include btnStyle('cancle', coral, white, 30px, solid 1px);
+    }
+    .error{
+        @include btnStyle('error', pink, white, 40px, solid 4px);
+    }
+}
+
+
+
