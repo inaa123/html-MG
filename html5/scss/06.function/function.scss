@@ -7,11 +7,14 @@ function 함수
 mixin과 흡사하지만 출력방식은 전혀 다르다.
 
 mixin은 지정된 스타일에 값을 적용해서 반환하는 방식
-    ex width의 값: 지정된 값 또는 계산된 값 또는 매개변수 값으로 넣음
 function은 지정된 스타일이 아니라 연산 작용을 하는 특정 값을 return문으로 반환한다.
 
 mixin 믹스명() {스타일}
-function 함수명(매개변수) {@return 값} ->function은 무조건 매개변수 있어야함. return:값을 밖으로 보내겠다.
+function 함수명(매개변수) {@return 값} ->function은 무조건 매개변수 있어야함. return:값 밖으로 보내겠다.
+
+
+
+
 
 */
 
@@ -30,6 +33,6 @@ $fontSize : 20px;
 .box{
     //@include calcW(20px);
     background: coral;
-    width: calcWidth(5); //단위는 넣지 않는다.
+    width: calcWidth(5);
     height: calcWidth(3);
 }
